@@ -69,6 +69,42 @@ function sza = szaLat(latitude,varargin)
 %                                   % latitude during the months of Dec,
 %                                   % Jan, and Feb.
 %
+%
+%NOTES
+% Solar zenith angle (θ_z) is defined by Duffie & Beckman (1980, p.13) as 
+% "the angle between the vertical and the line to the sun, that is, the
+% angle of incidence of beam radiation on a horizontal surface. Solar
+% declination (δ) is the "angular position of the sun at solar noon" 
+% (p.12). The declination can be approximated by Cooper's equation 
+% (Cooper, 1969):
+%
+%    δ = 23.45sin(360*((284+n)/365))
+%
+% where `n` is the day of the year (01 Jan = 1; 31 Dec = 365). A slightly
+% better estimate is defined using Spencer's equation (Spencer, 1971):
+%
+%    δ = (180/π)(0.006918-0.399912*cos(B)+0.070257*sin(B)-0.006758*cos(2B)+
+%         0.000907*sin(2B)-0.002697*cos(3B)+0.00148*sin(3B))
+%
+% where B is equal to (n-1)*(360/365). Solar zenith angle may be estimated
+% (in the special case of solar noon) by the formula:
+%
+%    θ_z = |φ − δ|
+%
+% where `φ` is latitude in degrees and `δ` is the declination (see Duffie
+% & Beckman, 1980, p. 17, Eq. 1.6.9).
+%
+%REFERENCES
+% Cooper, P. I. (1969). The Absorption of Solar Radiation in Solar Stills.
+% Solar Energy, 12(3).
+%
+% Duffie, John A., and William A. Beckman (1980). Solar engineering of
+% thermal processes. New York: Wiley.
+%
+% Spencer, J. W. (1971). Fourier Series Representation of the Position of
+% the Sun. Search, 2(5), 172.
+%
+%
 %See also
 % snicar
 
@@ -161,38 +197,3 @@ if ~isempty(m)
 else
   error('Something went wrong with parsing day/month arguments.')
 end
-
-
-%NOTES
-% Solar zenith angle (θ_z) is defined by Duffie & Beckman (1980, p.13) as 
-% "the angle between the vertical and the line to the sun, that is, the
-% angle of incidence of beam radiation on a horizontal surface. Solar
-% declination (δ) is the "angular position of the sun at solar noon" 
-% (p.12). The declination can be approximated by Cooper's equation 
-% (Cooper, 1969):
-%
-%    δ = 23.45sin(360*((284+n)/365))
-%
-% where `n` is the day of the year (01 Jan = 1; 31 Dec = 365). A slightly
-% better estimate is defined using Spencer's equation (Spencer, 1971):
-%
-%    δ = (180/π)(0.006918-0.399912*cos(B)+0.070257*sin(B)-0.006758*cos(2B)+
-%         0.000907*sin(2B)-0.002697*cos(3B)+0.00148*sin(3B))
-%
-% where B is equal to (n-1)*(360/365). Solar zenith angle may be estimated
-% (in the special case of solar noon) by the formula:
-%
-%    θ_z = |φ − δ|
-%
-% where `φ` is latitude in degrees and `δ` is the declination (see Duffie
-% & Beckman, 1980, p. 17, Eq. 1.6.9).
-%
-%REFERENCES
-% Cooper, P. I. (1969). The Absorption of Solar Radiation in Solar Stills.
-% Solar Energy, 12(3).
-%
-% Duffie, John A., and William A. Beckman (1980). Solar engineering of
-% thermal processes. New York: Wiley.
-%
-% Spencer, J. W. (1971). Fourier Series Representation of the Position of
-% the Sun. Search, 2(5), 172.
