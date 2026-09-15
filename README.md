@@ -66,7 +66,7 @@ For more information about input fields, execute `help snicar` in the MATLAB Com
 Please cite both of the following in peer-review publications:
 
 * Flanner, M. G., Arnheim, J. B., Cook, J. M., Dang, C., He, C., Huang, X., Singh, D., Skiles, S. M., Whicker, C. A., & Zender, C. S. (2021). SNICAR-ADv3: A community tool for modeling spectral snow albedo. *Geoscientific Model Development*, *14*(12), 7673–7704. https://doi.org/10.5194/gmd-14-7673-2021
-* Flanner, M. G. (2023). SNICAR-ADv3 [MATLAB]. GitHub. https://github.com/mflanner/SNICARv3
+* Flanner, M. G. and SNICAR Contributors (2020). SNICAR-ADv3 [MATLAB]. GitHub. https://github.com/mflanner/SNICARv3 (Last accessed: DD-Mon-YYYY)
 
 For `BibLaTeX`:
 ```tex
@@ -84,8 +84,9 @@ For `BibLaTeX`:
 
 @software{snicarADv3,
   title = {{{SNICAR-ADv3}}},
-  author = {Flanner, Mark G.},
-  date = {DD-Mon-YYYY},
+  author = {Flanner, Mark G. and {SNICAR Contributors}},
+  year = 2020,
+  urldate = {YYYY-MM-DD},
   url = {https://github.com/mflanner/SNICARv3}
 }
 ```
