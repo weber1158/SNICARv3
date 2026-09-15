@@ -6,7 +6,7 @@ This code uses a two-stream approximation to calculate snow spectral albedo and 
 
 
 ## 🛠️ How to Use
-1. Download the three source files: `snicarAD_v3.m`, `snicarAD_v3_drv.m`, and `snicar.m`.
+1. Download the three source files: `snicarAD_v3.m`, `snicarAD_v3_drv.m`, and `snicar.m`, as well as the helper function `szaLat.m`.
    - Optional: Download the `SNICARv3.mlapp` file, which is a MATLAB graphical user interface (GUI).
 
 2. Navigate to the 📁[**Links to optics libraries**](https://github.com/mflanner/SNICARv3/blob/master/Links%20to%20optics%20libraries.md) folder and download one of the following optics library packages:
